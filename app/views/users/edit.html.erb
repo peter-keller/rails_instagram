@@ -1,8 +1,12 @@
 <h1>Editing User</h1>
 
 <!-- <%= render 'form', user: @user %> -->
+<%= image_tag(url_for(@user.avatar), size: "40x40", class: "round")  %>
+<strong><%= @user.user_name %></strong>
 
-<%= form_for(@user) do |f| %>
+
+<%= form_for(@user)  do |f| %>
+   <%= f.file_field :avatar %>
    <%= f.label :full_name %>
    <%= f.text_field :full_name %>
    <%= f.label :user_name %>
@@ -10,14 +14,15 @@
    <%= f.label :website %>
    <%= f.text_field :website %>
    <%= f.label :user_bio %>
-   <%= f.text_field :user_bio %>
+   <%= f.text_area :user_bio %>
    <%= f.label :email %>
    <%= f.text_field :email %>
    <%= f.label :phone_number %>
    <%= f.text_field :phone_number %>
    <%= f.label :gender %>
    <%= f.text_field :gender %>
-   
+   <br>
+   <br>
    <%= f.submit %>
  <% end %>
 
