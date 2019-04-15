@@ -1,24 +1,42 @@
 <h1>Editing User</h1>
 
 <!-- <%= render 'form', user: @user %> -->
-<%= image_tag(url_for(@user.avatar), size: "40x40", class: "round")  %>
+<% if @user.avatar_attachment %>
+          <%= image_tag(url_for(@user.avatar), size: "40x40", class: "round")  %>
+        <% else %>
+          <%= image_tag(image_url('default.jpg'), size: "40x40", class: "round") %>
+        <% end %>
 <strong><%= @user.user_name %></strong>
 
 
 <%= form_for(@user)  do |f| %>
    <%= f.file_field :avatar %>
+   <br>
+
    <%= f.label :full_name %>
    <%= f.text_field :full_name %>
+   <br>
+
    <%= f.label :user_name %>
    <%= f.text_field :user_name %>
+   <br>
+
    <%= f.label :website %>
    <%= f.text_field :website %>
+   <br>
+
    <%= f.label :user_bio %>
    <%= f.text_area :user_bio %>
+   <br>
+
    <%= f.label :email %>
    <%= f.text_field :email %>
+   <br>
+
    <%= f.label :phone_number %>
    <%= f.text_field :phone_number %>
+   <br>
+
    <%= f.label :gender %>
    <%= f.text_field :gender %>
    <br>

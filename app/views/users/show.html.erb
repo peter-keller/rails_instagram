@@ -10,10 +10,21 @@
   <div class="container">
     <div class="row">
       <div class="image">
-        <%= image_tag(url_for(@user.avatar), size: "80x80", class: "round")  %>
+        <% if @user.avatar_attachment %>
+          <%= image_tag(url_for(@user.avatar), size: "80x80", class: "round")  %>
+        <% else %>
+          <%= image_tag(image_url('default.jpg'), size: "80x80", class: "round") %>
+        <% end %>
       </div>
       <div class="content">
         <strong><%= @user.user_name %></strong>
+        <%= link_to "Edit", edit_user_path(@user), class: 'button btn btn-primary' %>
+        <br>
+        <span>16 posts</span>
+        <span>16 followers</span>
+        <span>16 following</span>
+        <p><%= @user.full_name %></p>
+        <p><%= @user.user_bio ? @user.user_bio : nil%></p>
 
       </div>
     </div>
