@@ -1,9 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="image">
+        <%= image_tag(url_for(@user.avatar), size: "80x80", class: "round")  %>
+      </div>
+      <div class="content">
+        <strong><%= @user.user_name %></strong>
+
+      </div>
+    </div>
+  </div>
+</main>
