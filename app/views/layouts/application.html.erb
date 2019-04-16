@@ -7,18 +7,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
   </head>
 
   <body>
-<<<<<<< HEAD
-   
-=======
   <nav class="navbar" style="height: 77px">
   <%= link_to root_path do %>
   <div>
-    <%= image_tag("instagram_logo.png", size: "24x24")%>
+    <%= image_tag("instagram_logo.png", size: "21x21", class: "logo-image")%>
     <div class="divider_div"></div>
-    <%=image_tag("instagram.png", size: "103x59")%>
+    <%=image_tag("instagram.png", size: "103x50", class: "logo-image", style: "margin-top: 5px;")%>
   </div>
   <% end %>
   <form class="form-inline">
@@ -27,11 +26,20 @@
     </span>
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
   </form>
-  <a class="navbar-brand">icons here</a>
+  <div>
+    <%= link_to root_path do %>
+      <span class="far fa-compass"></span>
+    <% end %>
+    <%= link_to root_path do %>
+      <span class="far fa-heart"></span>
+    <% end %>
+    <%= link_to root_path do %>
+      <span class="far fa-user"></span>
+    <% end %>
+  </div>
 
     
 </nav>
->>>>>>> 0e9f24068ee4ab291b4f2a29b602b41d476217a3
     <%= yield %>
    
   </body>
