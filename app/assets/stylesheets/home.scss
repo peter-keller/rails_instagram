@@ -1,3 +1,30 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.divider_div {
+  background-color: #262626;
+  height: 28px;
+  margin: 0 16px;
+  width: 1px;
+  display: inline-block;
+}
+
+nav {
+  background-color: white !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+}
+
+.form-inline > input {
+  border: solid 1px #dbdbdb;
+  border-radius: 3px;
+  color: #262626;
+  outline: 0;
+  padding: 3px 10px 3px 26px;
+  z-index: 2;
+}
+
+.searchIcon {
+  position: absolute;
+  z-index: 3;
+}

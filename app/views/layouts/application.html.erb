@@ -10,7 +10,28 @@
   </head>
 
   <body>
+<<<<<<< HEAD
    
+=======
+  <nav class="navbar" style="height: 77px">
+  <%= link_to root_path do %>
+  <div>
+    <%= image_tag("instagram_logo.png", size: "24x24")%>
+    <div class="divider_div"></div>
+    <%=image_tag("instagram.png", size: "103x59")%>
+  </div>
+  <% end %>
+  <form class="form-inline">
+    <span class="searchIcon">
+      <%=image_tag("search.png", size: "20x20") %>
+    </span>
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  </form>
+  <a class="navbar-brand">icons here</a>
+
+    
+</nav>
+>>>>>>> 0e9f24068ee4ab291b4f2a29b602b41d476217a3
     <%= yield %>
    
   </body>
