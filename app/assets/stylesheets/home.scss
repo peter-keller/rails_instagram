@@ -49,8 +49,12 @@ div {
 }
 
 .far {
-  margin-left: 30px;
   color: black;
   font-weight: 100 !important;
   font-size: 28px;
+}
+
+.logo-div {
+  margin-left: 30px;
+  display: inline-block;
 }

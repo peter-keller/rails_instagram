@@ -20,10 +20,25 @@
         <span>16 following</span>
         <p><%= @user.full_name %></p>
         <p><%= @user.user_bio ? @user.user_bio : nil%></p>
-
-      <!--<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>-->
       </div>
     </div>
   </div>
+  <section>
+    <div class="container">
+      <div class="row">
+
+        <% if @user.posts %>
+          <% @user.posts.each do |post| %>
+              <div class="col-lg-4 col-md-4 item" style="">
+            <%= link_to post_path(post) do %>
+
+              <%= image_tag(url_for(post.picture), class: "img-fluid image custom-image")%>
+            <% end %>
+            </div>
+
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    </section>
 </main>
