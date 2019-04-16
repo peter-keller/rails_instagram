@@ -1,10 +1,5 @@
-<p id="notice"><%= notice %></p>
 
 
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
 
 <main>
   <div class="container">
@@ -26,6 +21,8 @@
         <p><%= @user.full_name %></p>
         <p><%= @user.user_bio ? @user.user_bio : nil%></p>
 
+      <!--<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>-->
       </div>
     </div>
   </div>
