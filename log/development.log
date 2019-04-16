@@ -5007,3 +5007,272 @@ Completed 200 OK in 3ms (ActiveRecord: 0.0ms)
 
 
 >>>>>>> 0e9f24068ee4ab291b4f2a29b602b41d476217a3
+Started GET "/users" for ::1 at 2019-04-16 11:33:22 +0100
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Quantitative/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (10.8ms)
+Started GET "/posts" for ::1 at 2019-04-16 11:33:27 +0100
+Completed 200 OK in 5881ms (Views: 5850.9ms | ActiveRecord: 3.0ms)
+
+
+  
+SyntaxError (/Users/Quantitative/Development/code/mod_2/week_01/rails/rails_instagram/app/controllers/posts_controller.rb:42: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/posts_controller.rb:42: syntax error, unexpected end-of-input, expecting end
+Started GET "/posts/new" for ::1 at 2019-04-16 11:33:32 +0100
+  
+SyntaxError (/Users/Quantitative/Development/code/mod_2/week_01/rails/rails_instagram/app/controllers/posts_controller.rb:42: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/posts_controller.rb:42: syntax error, unexpected end-of-input, expecting end
+Started GET "/posts/new" for ::1 at 2019-04-16 11:38:30 +0100
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (42.8ms)
+Completed 200 OK in 222ms (Views: 152.0ms | ActiveRecord: 53.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-04-16 11:39:51 +0100
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 116ms (Views: 112.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2019-04-16 11:40:03 +0100
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for PostsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/posts/new" for ::1 at 2019-04-16 11:40:11 +0100
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 175ms (Views: 172.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2019-04-16 11:42:15 +0100
+  
+SyntaxError (/Users/Quantitative/Development/code/mod_2/week_01/rails/rails_instagram/app/controllers/posts_controller.rb:42: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/posts_controller.rb:42: syntax error, unexpected end-of-input, expecting end
+Started POST "/posts" for ::1 at 2019-04-16 11:43:56 +0100
+  
+SyntaxError (/Users/Quantitative/Development/code/mod_2/week_01/rails/rails_instagram/app/controllers/posts_controller.rb:42: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/posts_controller.rb:42: syntax error, unexpected end-of-input, expecting end
+Started GET "/posts/new" for ::1 at 2019-04-16 11:45:46 +0100
+  
+SyntaxError (/Users/Quantitative/Development/code/mod_2/week_01/rails/rails_instagram/app/controllers/posts_controller.rb:43: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/posts_controller.rb:43: syntax error, unexpected end-of-input, expecting end
+Started GET "/posts/new" for ::1 at 2019-04-16 11:46:30 +0100
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 117ms (Views: 99.6ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/posts" for ::1 at 2019-04-16 11:46:46 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lfYgQ57VnukBGvZBpPILazmwvanS5dtYpMSxkiR34LMK2Hmuw5ry22SFwEwUZn6aEdlhBUO7HHb8uaGE9oHrBg==", "post"=>{"description"=>"i know you", "location"=>"London"}, "commit"=>"Create Post"}
+  [1m[35m (5.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:17
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 145ms (Views: 96.0ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/posts" for ::1 at 2019-04-16 11:46:49 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3BNmpBqV91aByCkP31UV+ZShojbta3BPT3PG2GrGry1DPT9JR9qbZORXHwJvwWAIvMh+mnw1t2EXDtbOuDCkmA==", "post"=>{"description"=>"i know you", "location"=>"London"}, "commit"=>"Create Post"}
+  [1m[35m (4.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:17
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:17
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 90ms (Views: 80.1ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/posts" for ::1 at 2019-04-16 11:46:51 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7pSiBhP2ivu03y80bEbUNKUxti70z1CGKrYDSE89re1xuvvrTrnmydFAGTnc0qHFjVhqgmWRl6hyyxNencumWA==", "post"=>{"description"=>"i know you", "location"=>"London"}, "commit"=>"Create Post"}
+  [1m[35m (7.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:17
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 93ms (Views: 79.9ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/posts" for ::1 at 2019-04-16 11:50:20 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t/C4ni8VoPsrqVcMpIJp6abw9xfmx+YL3iRx1kMuhywo3uFzclrMyU42YQEUFhwYjpkru3eZISWGWWHAkdiMmQ==", "post"=>{"description"=>"i know you", "location"=>"London"}, "commit"=>"Create Post"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:17
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:17
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 127ms (Views: 99.6ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/posts" for ::1 at 2019-04-16 11:50:22 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mhSr7GxS5AMrzNlziz1xK8Vq49FFeXVWVntPIupk+7AFOvIBMR2IMU5T7347qQTa7QM/fdQnsngOBl80OJLwBQ==", "post"=>{"description"=>"i know you", "location"=>"London"}, "commit"=>"Create Post"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:17
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 82ms (Views: 77.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-04-16 11:51:11 +0100
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 126ms (Views: 122.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2019-04-16 11:51:26 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ApqtR60xhKvH94uVQFjiLZ7GpMN8FpkyTzC8dlb/986dtPSq8H7omaJovZjwzJfctq94b+1IXhwXTaxghAn8ew==", "post"=>{"description"=>"understand this", "location"=>"Leeds"}, "commit"=>"Create Post"}
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:17
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:17
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 91ms (Views: 82.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/posts" for ::1 at 2019-04-16 11:51:32 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 83ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-04-16 11:51:40 +0100
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 112ms (Views: 110.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/1" for ::1 at 2019-04-16 11:52:13 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (42.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7
+Completed 404 Not Found in 72ms (ActiveRecord: 42.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=1):
+  
+app/controllers/posts_controller.rb:7:in `show'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/posts/edit" for ::1 at 2019-04-16 11:55:30 +0100
+  [1m[35m (40.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Quantitative/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7
+Completed 404 Not Found in 27ms (ActiveRecord: 7.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=edit):
+  
+app/controllers/posts_controller.rb:7:in `show'
+Started GET "/posts/1" for ::1 at 2019-04-16 11:55:37 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7
+Completed 404 Not Found in 5ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=1):
+  
+app/controllers/posts_controller.rb:7:in `show'
+Started GET "/posts/1" for ::1 at 2019-04-16 11:56:19 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7
+Completed 404 Not Found in 10ms (ActiveRecord: 3.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=1):
+  
+app/controllers/posts_controller.rb:7:in `show'
+Started GET "/posts/new" for ::1 at 2019-04-16 11:56:32 +0100
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 445ms (Views: 430.4ms | ActiveRecord: 0.0ms)
+
+
