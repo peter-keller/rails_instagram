@@ -1,3 +1,4 @@
 <h1>Post</h1>
 <h4>Post Description: <%=@post.description%></h4>
 <h4>Post Location: <%=@post.location%></h4>
+<%= image_tag(url_for(@post.picture), size: "80x80", class: "round")  %>
