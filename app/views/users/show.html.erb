@@ -15,12 +15,27 @@
     </div>
     <div class="col-lg-8 right">
       <div class="content">
-        <strong><%= @user.user_name %></strong>
-        <%= link_to "Edit", edit_user_path(@user), class: 'button btn btn-primary' %>
-        <br>
-        <span>16 posts</span>
-        <span>16 followers</span>
-        <span>16 following</span>
+        <div class="row" style="max-width: 300px; margin-left: 0; ">
+          <h1 style="font-weight: 200; float: left; margin-right: 25px"><%= @user.user_name %></h1>
+          <% if current_user.id == @user.id %>
+            <%= button_to "Edit Profile", edit_user_path(current_user), class: "customButton", method: "get" %>
+          <% elsif current_user.followees.include?(@user) %>
+            <%= button_to "Unfollow", follower_path(@user.id), class: "customButton", method: "delete" %>
+          <% else %>
+            <%= button_to "Follow", followers_path, class: "customButton", method: "post", params: { id: @user.id } %>
+          <% end %>
+        </div>
+        <div class="row" style="max-width: 400px">
+        <div class="col">
+        <span><%= @user.posts.length %> posts</span>
+        </div>
+        <div class="col">
+        <span><%= @user.followers.length %> followers</span>
+        </div>
+        <div class="col">
+        <span><%=@user.followees.length%> following</span>
+        </div>
+        </div>
         <p><%= @user.full_name %></p>
         <p><%= @user.user_bio ? @user.user_bio : nil%></p>
       </div>
@@ -33,7 +48,7 @@
 
         <% if @user.posts %>
           <% @user.posts.each do |post| %>
-              <div class="col-lg-4 col-md-4 item " style="">
+              <div class="col-lg-4 col-md-4 item " style="margin-bottom: 25px">
             <%= link_to post_path(post) do %>
 
             <div class="contentSpan">
