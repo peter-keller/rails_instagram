@@ -15,7 +15,7 @@ class PostsController < ApplicationController
        @post = Post.new(description: params[:post][:description], location: params[:post][:location], user_id: current_user.id)
        @post.picture.attach(params[:post][:picture])
        if @post.save 
-        redirect_to @post
+        redirect_to current_user
        else
         render :new
        end

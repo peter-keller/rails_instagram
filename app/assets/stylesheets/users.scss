@@ -39,11 +39,31 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0;
   color: white;
+  z-index: 99;
 }
 
 .contentSpan > * {
+  opacity: 0;
+  color: white;
+
   font-size: 22px;
   filter: brightness(100%) !important;
+}
+
+.customButton {
+  float: right;
+  outline: 0 !important;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+  color: #262626;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.customButton:hover {
+  text-decoration: none;
+  color: #262626;
+  background-color: #fafafa;
+  cursor: pointer;
 }
