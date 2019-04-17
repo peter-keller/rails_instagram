@@ -3,14 +3,17 @@
 
 <main>
   <div class="container">
-    <div class="row">
+    <div class="row headerContent">
+    <div class="col left">
       <div class="image">
         <% if @user.avatar_attachment %>
-          <%= image_tag(url_for(@user.avatar), size: "80x80", class: "round")  %>
+          <%= image_tag(url_for(@user.avatar), size: "150x150", class: "round")  %>
         <% else %>
-          <%= image_tag(image_url('default.jpg'), size: "80x80", class: "round") %>
+          <%= image_tag(image_url('default.jpg'), size: "150x150", class: "round") %>
         <% end %>
       </div>
+    </div>
+    <div class="col-lg-8 right">
       <div class="content">
         <strong><%= @user.user_name %></strong>
         <%= link_to "Edit", edit_user_path(@user), class: 'button btn btn-primary' %>
@@ -22,6 +25,7 @@
         <p><%= @user.user_bio ? @user.user_bio : nil%></p>
       </div>
     </div>
+    </div>
   </div>
   <section>
     <div class="container">
@@ -29,10 +33,15 @@
 
         <% if @user.posts %>
           <% @user.posts.each do |post| %>
-              <div class="col-lg-4 col-md-4 item" style="">
+              <div class="col-lg-4 col-md-4 item " style="">
             <%= link_to post_path(post) do %>
 
-              <%= image_tag(url_for(post.picture), class: "img-fluid image custom-image")%>
+            <div class="contentSpan">
+              <span class="fas fa-heart">   142</span>
+              <span class="fas fa-comment" style="margin-left: 25px;">   57</span>
+            </div>
+            <%= image_tag(url_for(post.picture), class: "img-fluid image custom-image darken")%>
+
             <% end %>
             </div>
 
@@ -42,3 +51,8 @@
     </div>
     </section>
 </main>
+
+
+
+
+
