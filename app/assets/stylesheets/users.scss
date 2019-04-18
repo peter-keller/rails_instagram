@@ -67,3 +67,30 @@ main {
   background-color: #fafafa;
   cursor: pointer;
 }
+
+.imagePart {
+  width: 600px;
+}
+
+.contentPart {
+  width: 320px;
+}
+
+.user_name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.timePtag {
+  color: #999;
+}
+
+.modalIcon {
+  font-size: 30px;
+}
+
+.modalBottom {
+  bottom: 120px;
+  position: absolute;
+  border-top: 1px solid #efefef;
+}
