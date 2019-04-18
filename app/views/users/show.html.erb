@@ -47,20 +47,61 @@
       <div class="row">
 
         <% if @user.posts %>
-          <% @user.posts.each do |post| %>
-              <div class="col-lg-4 col-md-4 item " style="margin-bottom: 25px">
-            <%= link_to post_path(post) do %>
-
-            <div class="contentSpan">
-              <span class="fas fa-heart">   142</span>
-              <span class="fas fa-comment" style="margin-left: 25px;">   57</span>
-            </div>
-            <%= image_tag(url_for(post.picture), class: "img-fluid image custom-image darken")%>
-
-            <% end %>
+          <% @user.posts.each_with_index do |post, index| %>
+            <div class="col-lg-4 col-md-4 item " style="margin-bottom: 25px" >
+              <div class="contentSpan">
+                <span class="fas fa-heart">   <%= post.likes.length %></span>
+                <span class="fas fa-comment" style="margin-left: 25px;">   57</span>
+              </div>
+              <%= image_tag(url_for(post.picture), class: "img-fluid image custom-image darken")%>
             </div>
 
-          <% end %>
+            <div class="modal fade lg" id="myModal<%= index %>" role="dialog" >
+              <div class="modal-dialog " style="min-width: 940px; min-height: 600px">
+                <div class="modal-content" style="min-height: 600px">
+                  <div class="modal-header">
+                    <button type="button" class="close" id="close<%= index %>" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-lg-8">
+                        <%= image_tag(url_for(post.picture), class: "img-fluid")%>
+                      </div>
+                      <div class="col-lg-4">
+                        <%= image_tag(url_for(@user.avatar), class: 'round', size: "32x32") %>
+                        <span class="user_name" style="margin-bottom: 15px; "><%=@user.user_name%></span>
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <span class="user_name"><%= @user.user_name %></span>
+                            <span><%= post.description %></span>
+                            <p class="timePtag"> <%= time_ago_in_words(post.created_at)%> ago</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-12">
+                             <!-- comments here -->
+                          </div>
+                        </div>
+                        <div class="row modalBottom">
+                          <div class="col-lg-12">
+                              <span class="far fa-heart modalIcon" post_id="<%=post.id%>" id="newLike<%=index%>" liked="false">
+                              </span>
+                            <span class="far fa-comment modalIcon"></span>
+                            <br>
+                            <span class="user_name likeCounter"><%= post.likes.length %> likes</span>
+                            <br>
+                            <span class="timePtag" style="font-size: 12px"><%= post.created_at.day %> <%= Date::MONTHNAMES[post.created_at.month] %></span>
+                            <!--form here to new comment -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %> 
         <% end %>
       </div>
     </div>

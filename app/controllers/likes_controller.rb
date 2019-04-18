@@ -1,4 +1,7 @@
 class LikesController < ApplicationController
+    skip_before_action :verify_authenticity_token
+
+    
     def index 
         @likes = Like.all
     end
@@ -12,8 +15,10 @@ class LikesController < ApplicationController
     end
 
     def create 
-        @like = Like.new(user_id: user_id, post_id: post_id)
-        @like.save
+        @like = Like.new(user_id: current_user.id, post_id: params[:post_id])
+        if @like.save
+            render :json => {:status => "ok"}
+        end
     end
 
     def edit 
@@ -31,6 +36,8 @@ class LikesController < ApplicationController
         @like= Like.find(params[:id])
         @like.destroy
     end
+
+    private
 
     def like_params
         params.require(:like).permit(:user_id, post_id)
