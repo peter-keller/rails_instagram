@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :posts
   resources :followers
   resources :likes
+  resources :comments
 end
