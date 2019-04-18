@@ -11,11 +11,12 @@ class CommentsController < ApplicationController
         @comment = Comment.new
     end
 
-    def create 
-        @comment = Comment.new(message: params[:message])
-        @comment.save
-
-        redirect_to comment_path(@comment)
+    def create
+        @post = Post.find(params[:post_id].keys.first.to_i)
+        @comment = Comment.new({user_id: current_user.id, post_id: params[:post_id].keys.first.to_i, message: params[:message]})
+        if @comment.save
+            redirect_to user_path(@post.user)
+        end
     end
 
     # def delete 

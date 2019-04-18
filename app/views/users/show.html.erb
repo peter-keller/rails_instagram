@@ -51,7 +51,7 @@
             <div class="col-lg-4 col-md-4 item " style="margin-bottom: 25px" >
               <div class="contentSpan">
                 <span class="fas fa-heart">   <%= post.likes.length %></span>
-                <span class="fas fa-comment" style="margin-left: 25px;">   57</span>
+                <span class="fas fa-comment" style="margin-left: 25px;">   <%= post.comments.length %></span>
               </div>
               <%= image_tag(url_for(post.picture), class: "img-fluid image custom-image darken")%>
             </div>
@@ -79,7 +79,19 @@
                         </div>
                         <div class="row">
                           <div class="col-lg-12">
-                             <!-- comments here -->
+                            <% if !post.comments.empty? %>
+                              <% post.comments.each do |comment| %>
+                                <div class="row" style="margin-top: 15px">
+                                  <div class="col-lg-2">
+                                    <%= image_tag(url_for(comment.user.avatar), class: 'round', size: "32x32") %>
+                                  </div>
+                                  <div class="col-lg-10">
+                                    <span class="user_name"><%= comment.user.user_name %></span>
+                                    <span><%= comment.message %></span>
+                                  </div>
+                                </div>
+                              <% end %>
+                            <% end %>
                           </div>
                         </div>
                         <div class="row modalBottom">
@@ -91,7 +103,14 @@
                             <span class="user_name likeCounter"><%= post.likes.length %> likes</span>
                             <br>
                             <span class="timePtag" style="font-size: 12px"><%= post.created_at.day %> <%= Date::MONTHNAMES[post.created_at.month] %></span>
-                            <!--form here to new comment -->
+                            <div class="postPart" style="bottom: -125px; position: relative;">
+                              <%= form_tag("/comments") do %>
+                                
+                                <span><%= text_field_tag('message', nil, placeholder: 'Add a comment...') %></span>
+                                <span><%= submit_tag "Post" %></span>
+                                <%= hidden_field(:post_id, "#{post.id}") %>
+                              <% end %>
+                            </div>
                           </div>
                         </div>
                       </div>
